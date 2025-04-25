@@ -1,0 +1,62 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Doctor Listing</title>  
+    <link rel="stylesheet" href="styles.css">  
+</head>  
+<body>  
+    <header>  
+        <input type="text" id="autocomplete-input" data-testid="autocomplete-input" placeholder="Search Symptoms, Doctors, Specialists, Clinics">  
+        <div id="suggestions" class="suggestion-dropdown"></div>  
+    </header>  
+    <div id="filter-panel">  
+        <div>  
+            <h3>Sort by</h3>  
+            <label>  
+                <input type="radio" name="sort" value="fees" id="sort-fees" data-testid="sort-fees"> Price: Low-High  
+            </label>  
+            <label>  
+                <input type="radio" name="sort" value="experience" id="sort-experience" data-testid="sort-experience"> Experience: Most Experience first  
+            </label>  
+        </div>  
+
+        <div>  
+            <h3>Filters</h3>  
+            <input type="text" id="speciality-input" placeholder="Search Specialities" oninput="filterSpecialities()">  
+            <div id="speciality-list">  
+                <label>  
+                    <input type="checkbox" id="filter-specialty-Neurologist" data-testid="filter-specialty-Neurologist"> Neurologist  
+                </label>  
+                <label>  
+                    <input type="checkbox" id="filter-specialty-Oncologist" data-testid="filter-specialty-Oncologist"> Oncologist  
+                </label>  
+                <label>  
+                    <input type="checkbox" id="filter-specialty-Ayurveda" data-testid="filter-specialty-Ayurveda"> Ayurveda  
+                </label>  
+                <label>  
+                    <input type="checkbox" id="filter-specialty-Homeopath" data-testid="filter-specialty-Homeopath"> Homeopath  
+                </label>  
+            </div>  
+        </div>  
+
+        <div>  
+            <h3>Mode of consultation</h3>  
+            <label>  
+                <input type="radio" name="consultation" value="Video" id="filter-video-consult" data-testid="filter-video-consult"> Video Consultation  
+            </label>  
+            <label>  
+                <input type="radio" name="consultation" value="In Clinic" id="filter-in-clinic" data-testid="filter-in-clinic"> In-clinic Consultation  
+            </label>  
+            <label>  
+                <input type="radio" name="consultation" value="All" id="filter-all" checked> All  
+            </label>  
+        </div>  
+    </div>  
+
+    <div id="doctor-list"></div>  
+
+    <script src="script.js"></script>  
+</body>  
+</html>  
